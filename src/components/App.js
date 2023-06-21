@@ -35,7 +35,7 @@ function App() {
 
           <section className='autor'>
             <section className='info-project'>
-              <p className='subtitle'>Personal Project Card</p>
+              <p className='subtitleCard'>Personal Project Card</p>
               <hr className='line' />
 
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
@@ -47,11 +47,11 @@ function App() {
               <section className='technologies'>
                 <p className='textTec'>React JS, MongoDB</p>
                 <div className='icons'>
-                  <span>
-                    <i class='fa-regular fa-globe'></i>
+                  <span className='glope'>
+                    <i className='fa-regular fa-globe'></i>
                   </span>
-                  <span>
-                    <i class='fa-brands fa-github'></i>
+                  <span className='github'>
+                    <i className='fa-brands fa-github'></i>
                   </span>
                 </div>
               </section>

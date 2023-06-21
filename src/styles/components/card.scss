@@ -2,127 +2,117 @@
   //width: 60%;
   //padding: 20px;
 }
+
 .main {
   width: 100%;
 }
+
 .main .preview .image {
   object-fit: cover;
   width: 100%;
-  //height: 80%;
 }
+
 .main .preview .autor {
-  background-color: white;
-  color: #3e3e3e;
-  //width: 80%; //90%
-  //height: 40%; //50%
+  background-color: $white;
+  color: $greyish-brown;
   transform: translateY(-50px);
-  //margin: auto;
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
-  //gap: 40px;
-  padding: 15px; //30px
+  padding: 15px 5px 25px 5px;
   overflow-y: scroll;
 }
 
 .info-project {
-  //width: 60%;
+  width: 60%;
 }
 
-.main .subtitle {
-  //text-align: center;
+.main .subtitleCard {
   font-weight: 300;
 }
 
-.info-project .subtitle {
-  //font-size: 14px;
+.info-project .subtitleCard {
   text-align: center;
   font-family: $poppins;
 }
 
-.subtitle {
+.subtitleCard {
   color: $dark;
   line-height: 1.17;
   font-size: 8px;
 }
 .info-project .line {
-  //width: 100%;
   border: 0;
   height: 1px;
-
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(1, 1, 1, 0.75),
-    rgba(255, 255, 255, 0)
-  );
+  background-image: $line-card-gradient;
 }
 
 .info-project .title {
-  color: black;
-  //margin-bottom: 10px;
+  color: $black;
 }
+
 .title {
   font-size: 14px;
   font-weight: bold;
   font-family: $catamaran;
   padding-bottom: 2px;
 }
+
 .info-project .slogan {
-  //font-size: 14px;
   margin-bottom: 10px;
 }
+
 .slogan {
   color: $greyish-brown-two;
   font-family: $poppins;
   font-weight: 500;
   font-size: 10.3px;
 }
+
 .info-project .desc {
-  font-size: 9px;
+  font-size: 8px;
   font-family: $poppins;
   line-height: 1.5;
   color: $greyish-brown-88;
-  //margin-bottom: 10px;
 }
 
 .technologies {
   display: flex;
-  background-color: white; //lightgray;
-  border-radius: 20px;
+  background-color: $white;
   font-size: 11px;
   padding-top: 18px;
-  width: 70%;
   font-family: $catamaran;
 }
 
-.textTec {
+.globe {
+  border: solid 1px $icon-border-card;
+  border-radius: 20px;
 }
-.icons {
+
+.github {
+  border: solid 1px $icon-border-card;
+  border-radius: 20px;
 }
+
 .info-autor {
-  //width: 40%;
+  width: 40%;
   text-align: center;
 }
 
-.info-autor {
-  //border-radius: 100%;
-}
 .imageCard {
   border-radius: 50%;
-  //width: 80px;
   height: 80px;
-  background-color: red;
+  padding-top: 10px;
 }
 .info-autor .job {
-  //font-weight: bold;
-  color: $warm-grey; //black;
-  font-size: 10px; //14px;
+  color: $warm-grey;
+  font-size: 8.8px;
   font-family: $catamaran;
+  padding-bottom: 5px;
 }
 
 .info-autor .name {
-  font-size: 16px;
+  font-size: 11.6px;
   font-family: $catamaran;
   font-weight: bold;
   color: $black-80;
