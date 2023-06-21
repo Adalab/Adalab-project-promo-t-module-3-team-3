@@ -1,7 +1,6 @@
 .main .form {
   background-color: #302c42;
   font-family: $montserrat;
-
   width: 394px;
   height: 773px;
   flex-grow: 0;
@@ -9,11 +8,10 @@
   padding: 35.4px 22px 21.1px 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
-  background: radial-gradient(circle at 50% 50%, $dusk $Dark-form 89%);
+  background-image: radial-gradient(circle at 50% 50%, $dusk, $Dark-form 89%);
 }
 .main .title {
   color: $white;
-  text-align: center;
   width: 262px;
   height: 37.4px;
   flex-grow: 0;
@@ -38,7 +36,7 @@
 }
 
 .main .ask-info .line {
-  width: 100%;
+  width: 50%;
   border: 0;
   height: 1px;
   background-image: linear-gradient(
@@ -58,23 +56,32 @@
 
 .main .input,
 .textarea {
-  background-color: #302c42;
-  border-color: $white;
+  background-color: transparent;
+  border: solid 2px $white;
   border-radius: 40px;
-  height: 42.72px;
+  height: 40px;
   color: $white;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding: 0 15px;
+  font-family: $montserrat;
+  font-size: 14px;
+  text-align: left;
 }
 .main .input::placeholder,
 .textarea::placeholder {
   color: $white;
 }
-
-.main .textarea {
-  height: 110px;
+.main .slogan-repo {
+  display: flex;
 }
-
+.main .textarea {
+  height: 80px;
+  padding: 15px;
+}
+.main .subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+}
 .main .buttons-img {
   text-align: center;
 }
@@ -84,17 +91,18 @@
   width: 160px;
   margin-top: 10px;
   color: $white;
+  font-family: $montserrat;
+  font-size: 12px;
   text-align: center;
   border: none;
-
   height: 43px;
-  background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+  background: linear-gradient(90deg, $dark-lilac -1.57%, $dark-light 98.43%);
   border-radius: 40px;
 }
 
 .main .btn-large {
-  width: 200px;
-  border: solid 2px$white;
+  width: px;
+  border: solid 2px $white;
 }
 
 .btn-color {

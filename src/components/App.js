@@ -1,8 +1,26 @@
+import { useState } from 'react';
+
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
+
 function App() {
+  /*const estado = useState{'holis'};
+  texto = stado[0];
+  setName = estado [1];
+ // const {name, setName} = useState{''}; esta funcion me devuelve un arrai;
+const [name, setName] = useState('');
+  const handleChangeName = (ev) => {
+    setName(ev.target.value);
+  };
+
+  const handleCancel = (ev) => {
+    ev.preventDefault();
+    setName('');
+  };*/
+
   const handleClickCreateCard = (event) => {};
+
   return (
     <div className='container'>
       <header className='header'>
@@ -20,10 +38,9 @@ function App() {
               <h2 className='title'>Elegant Workspace</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                accusantium placeat odit corrupti ipsum!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus?
+                Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus
+                aperiam, ullam culpa accusantium placeat odit corrupti ipsum!
               </p>
               <section className='technologies'>
                 <p className='text'>React JS, MongoDB</p>
@@ -54,27 +71,11 @@ function App() {
               name='name'
               id='name'
             />
-            <input
-              className='input'
-              type='text'
-              name='slogan'
-              id='slogan'
-              placeholder='Slogan'
-            />
-            <input
-              className='input'
-              type='text'
-              name='repo'
-              id='repo'
-              placeholder='Repo'
-            />
-            <input
-              className='input'
-              type='text'
-              placeholder='Demo'
-              name='demo'
-              id='demo'
-            />
+            <div className='slogan-repo'>
+              <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
+              <input className='input' type='text' name='repo' id='repo' placeholder='Repo' />
+            </div>
+            <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
             <input
               className='input'
               type='text'
@@ -97,32 +98,19 @@ function App() {
           </section>
 
           <fieldset className='autor'>
-            <input
-              className='input'
-              type='text'
-              placeholder='Nombre'
-              name='autor'
-              id='autor'
-            />
-            <input
-              className='input'
-              type='text'
-              placeholder='Trabajo'
-              name='job'
-              id='job'
-            />
+            <input className='input' type='text' placeholder='Nombre' name='autor' id='autor' />
+            <input className='input' type='text' placeholder='Trabajo' name='job' id='job' />
           </fieldset>
 
           <section className='buttons-img'>
-            <button className='btn'>Subir foto de proyecto</button>
+            <button className='btn'>Subir foto del proyecto</button>
             <button className='btn'>Subir foto de autora</button>
           </section>
           <section className='buttons-img'>
             <button className='btn-large' onClick={handleClickCreateCard}>
-              Crear Tarjeta
+              Crear Proyecto
             </button>
           </section>
-
           <section className='card'>
             <span className=''> La tarjeta ha sido creada: </span>
             <a href='./#' className='' target='_blank' rel='noreferrer'>
@@ -134,5 +122,5 @@ function App() {
     </div>
   );
 }
-
 export default App;
+// recogendo
