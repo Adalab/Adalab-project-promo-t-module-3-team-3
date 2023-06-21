@@ -1,9 +1,6 @@
 .main .preview {
-  width: 60%;
-}
-
-.main .preview {
-  padding: 20px;
+  //width: 60%;
+  //padding: 20px;
 }
 
 .main .preview .image {
@@ -15,8 +12,8 @@
 .main .preview .autor {
   background-color: white;
   color: #3e3e3e;
-  width: 70%; //90%
-  height: 40%; //50%
+  //width: 60%; //90%
+  //height: 40%; //50%
   transform: translateY(-100px);
   margin: auto;
   border-radius: 20px;
@@ -25,6 +22,61 @@
   gap: 40px;
   padding: 30px;
   overflow-y: scroll;
+}
+
+.info-project {
+  //width: 60%;
+}
+
+.main .subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.info-project .subtitle {
+  font-size: 14px;
+  text-align: center;
+}
+
+.info-project .line {
+  width: 100%;
+  border: 0;
+  height: 1px;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(1, 1, 1, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.info-project .title {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.info-project .slogan {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.info-project .desc {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.technologies {
+  background-color: lightgray;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 10px;
+  width: 70%;
+}
+
+.text {
 }
 
 .info-autor {
@@ -46,48 +98,4 @@
 
 .info-autor .name {
   font-size: 16px;
-}
-
-.info-project {
-  width: 60%;
-}
-
-.info-project .subtitle {
-  font-size: 14px;
-  text-align: center;
-}
-.info-project .title {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.info-project .desc {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.info-project .slogan {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.info-project .line {
-  width: 100%;
-  border: 0;
-  height: 1px;
-
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(1, 1, 1, 0.75),
-    rgba(255, 255, 255, 0)
-  );
-}
-.technologies {
-  background-color: lightgray;
-  border-radius: 20px;
-  font-size: 14px;
-  padding: 10px;
-  width: 70%;
 }
