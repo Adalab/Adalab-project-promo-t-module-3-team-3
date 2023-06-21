@@ -8,7 +8,12 @@ import imgUser from '../images/user.jpeg';
 -variable vacia*/
 function App() {
   //const [name, setName] = useState('');
-  const [data, setData] = useState({ name: '', slogan: '', repo: '', demo: '' });
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+  });
   const handleInputName = (ev) => {
     //name=ev.target.vaulue;
     //setName(ev.targe.value);
@@ -36,17 +41,24 @@ function App() {
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus?
-                Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus
-                aperiam, ullam culpa accusantium placeat odit corrupti ipsum!
+                Product Description Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Amet faucibus commodo tellus lectus lobortis.
               </p>
               <section className='technologies'>
-                <p className='text'>React JS, MongoDB</p>
+                <p className='textTec'>React JS, MongoDB</p>
+                <div className='icons'>
+                  <span>
+                    <i class='fa-regular fa-globe'></i>
+                  </span>
+                  <span>
+                    <i class='fa-brands fa-github'></i>
+                  </span>
+                </div>
               </section>
             </section>
 
             <section className='info-autor'>
-              <img className='image' src={imgUser} alt='' />
+              <img className='imageCard' src={imgUser} alt='' />
               <p className='job'>Full Stack Developer</p>
               <p className='name'>Emmelie Björklund</p>
             </section>
@@ -72,10 +84,28 @@ function App() {
               onInput={handleInputName}
             />
             <div className='slogan-repo'>
-              <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
-              <input className='input' type='text' name='repo' id='repo' placeholder='Repo' />
+              <input
+                className='input'
+                type='text'
+                name='slogan'
+                id='slogan'
+                placeholder='Slogan'
+              />
+              <input
+                className='input'
+                type='text'
+                name='repo'
+                id='repo'
+                placeholder='Repo'
+              />
             </div>
-            <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Demo'
+              name='demo'
+              id='demo'
+            />
             <input
               className='input'
               type='text'
@@ -98,8 +128,20 @@ function App() {
           </section>
 
           <fieldset className='autor'>
-            <input className='input' type='text' placeholder='Nombre' name='autor' id='autor' />
-            <input className='input' type='text' placeholder='Trabajo' name='job' id='job' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Nombre'
+              name='autor'
+              id='autor'
+            />
+            <input
+              className='input'
+              type='text'
+              placeholder='Trabajo'
+              name='job'
+              id='job'
+            />
           </fieldset>
 
           <section className='buttons-img'>

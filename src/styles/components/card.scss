@@ -13,15 +13,15 @@
 .main .preview .autor {
   background-color: white;
   color: #3e3e3e;
-  width: 80%; //90%
+  //width: 80%; //90%
   //height: 40%; //50%
   transform: translateY(-50px);
-  margin: auto;
+  //margin: auto;
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
   //gap: 40px;
-  padding: 30px;
+  padding: 15px; //30px
   overflow-y: scroll;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .main .subtitle {
-  text-align: center;
+  //text-align: center;
   font-weight: 300;
 }
 
@@ -43,10 +43,10 @@
 .subtitle {
   color: $dark;
   line-height: 1.17;
-  font-family: 12px;
+  font-size: 8px;
 }
 .info-project .line {
-  width: 100%;
+  //width: 100%;
   border: 0;
   height: 1px;
 
@@ -59,44 +59,61 @@
 }
 
 .info-project .title {
-  font-size: 20px;
   color: black;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
 }
-
-.info-project .slogan {
+.title {
   font-size: 14px;
+  font-weight: bold;
+  font-family: $catamaran;
+  padding-bottom: 2px;
+}
+.info-project .slogan {
+  //font-size: 14px;
   margin-bottom: 10px;
 }
-
+.slogan {
+  color: $greyish-brown-two;
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 10.3px;
+}
 .info-project .desc {
-  font-size: 12px;
-  margin-bottom: 10px;
+  font-size: 9px;
+  font-family: $poppins;
+  line-height: 1.5;
+  color: $greyish-brown-88;
+  //margin-bottom: 10px;
 }
 
 .technologies {
+  display: flex;
   background-color: white; //lightgray;
   border-radius: 20px;
-  font-size: 14px;
-  padding: 10px;
+  font-size: 11px;
+  padding-top: 18px;
   width: 70%;
   font-family: $catamaran;
 }
 
-.text {
+.textTec {
 }
-
+.icons {
+}
 .info-autor {
   //width: 40%;
   text-align: center;
 }
 
-.info-autor .image {
-  border-radius: 50%;
-  width: 80px;
-  height: 110px;
+.info-autor {
+  //border-radius: 100%;
 }
-
+.imageCard {
+  border-radius: 50%;
+  //width: 80px;
+  height: 80px;
+  background-color: red;
+}
 .info-autor .job {
   //font-weight: bold;
   color: $warm-grey; //black;
