@@ -25,8 +25,8 @@ function App() {
         <p className='text'>Proyectos Molones</p>
       </header>
       <main className='main'>
-        <section className='preview'>
-          <img className='image' src={imgHero} alt='' />
+        <section className='main__preview'>
+          <img className='main__preview--image' src={imgHero} alt='' />
 
           <section className='autor'>
             <section className='info-project'>
