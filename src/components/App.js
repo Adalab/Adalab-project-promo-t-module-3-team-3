@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
+import imgLogo from '../images/logo-adalab.png';
 
 /*
 -usar una vvariable objeto para tos los input
@@ -36,9 +37,10 @@ function App() {
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus?
-                Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus
-                aperiam, ullam culpa accusantium placeat odit corrupti ipsum!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
+                harum laboriosam saepe earum doloribus aperiam, ullam culpa
+                accusantium placeat odit corrupti ipsum!
               </p>
               <section className='technologies'>
                 <p className='text'>React JS, MongoDB</p>
@@ -72,10 +74,28 @@ function App() {
               onInput={handleInputName}
             />
             <div className='slogan-repo'>
-              <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
-              <input className='input' type='text' name='repo' id='repo' placeholder='Repo' />
+              <input
+                className='input'
+                type='text'
+                name='slogan'
+                id='slogan'
+                placeholder='Slogan'
+              />
+              <input
+                className='input'
+                type='text'
+                name='repo'
+                id='repo'
+                placeholder='Repo'
+              />
             </div>
-            <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Demo'
+              name='demo'
+              id='demo'
+            />
             <input
               className='input'
               type='text'
@@ -98,8 +118,20 @@ function App() {
           </section>
 
           <fieldset className='autor'>
-            <input className='input' type='text' placeholder='Nombre' name='autor' id='autor' />
-            <input className='input' type='text' placeholder='Trabajo' name='job' id='job' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Nombre'
+              name='autor'
+              id='autor'
+            />
+            <input
+              className='input'
+              type='text'
+              placeholder='Trabajo'
+              name='job'
+              id='job'
+            />
           </fieldset>
 
           <section className='buttons-img'>
@@ -119,6 +151,9 @@ function App() {
           </section>
         </section>
       </main>
+      <footer className="footer">
+        <img className="footer__logo"src={imgLogo} alt='Logo Adalab' />
+      </footer>
     </div>
   );
 }
