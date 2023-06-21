@@ -2,13 +2,19 @@ import { useState } from 'react';
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
+import imgLogo from '../images/logo-adalab.png';
 
 /*
 -usar una vvariable objeto para tos los input
 -variable vacia*/
 function App() {
   //const [name, setName] = useState('');
-  const [data, setData] = useState({ name: '', slogan: '', repo: '', demo: '' });
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+  });
   const handleInputName = (ev) => {
     //name=ev.target.vaulue;
     //setName(ev.targe.value);
@@ -22,7 +28,18 @@ function App() {
   return (
     <div className='container'>
       <header className='header'>
-        <p className='text'>Proyectos Molones</p>
+        <div className='header__container'>
+          <i className='fa-sharp fa-solid fa-laptop-code'></i>
+          <p className='header__text'>Proyectos Molones</p>
+          <img className='header__logo' src={imgLogo} alt='' />
+        </div>
+        <div className='header__container2'>
+          <h1 className='header__title'>Proyectos molones</h1>
+          <p className='header__text2'>
+            Escaparate en línea para recoger ideas a través de la tecnología.
+          </p>
+          <button className='header__button'>VER PROYECTO</button>
+        </div>
       </header>
       <main className='main'>
         <section className='preview'>
@@ -36,9 +53,10 @@ function App() {
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus?
-                Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus
-                aperiam, ullam culpa accusantium placeat odit corrupti ipsum!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
+                harum laboriosam saepe earum doloribus aperiam, ullam culpa
+                accusantium placeat odit corrupti ipsum!
               </p>
               <section className='technologies'>
                 <p className='text'>React JS, MongoDB</p>
@@ -72,10 +90,28 @@ function App() {
               onInput={handleInputName}
             />
             <div className='slogan-repo'>
-              <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
-              <input className='input' type='text' name='repo' id='repo' placeholder='Repo' />
+              <input
+                className='input'
+                type='text'
+                name='slogan'
+                id='slogan'
+                placeholder='Slogan'
+              />
+              <input
+                className='input'
+                type='text'
+                name='repo'
+                id='repo'
+                placeholder='Repo'
+              />
             </div>
-            <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Demo'
+              name='demo'
+              id='demo'
+            />
             <input
               className='input'
               type='text'
@@ -98,8 +134,20 @@ function App() {
           </section>
 
           <fieldset className='autor'>
-            <input className='input' type='text' placeholder='Nombre' name='autor' id='autor' />
-            <input className='input' type='text' placeholder='Trabajo' name='job' id='job' />
+            <input
+              className='input'
+              type='text'
+              placeholder='Nombre'
+              name='autor'
+              id='autor'
+            />
+            <input
+              className='input'
+              type='text'
+              placeholder='Trabajo'
+              name='job'
+              id='job'
+            />
           </fieldset>
 
           <section className='buttons-img'>
