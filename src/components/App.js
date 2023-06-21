@@ -1,23 +1,21 @@
 import { useState } from 'react';
-
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
 
+/*
+-usar una vvariable objeto para tos los input
+-variable vacia*/
 function App() {
-  /*const estado = useState{'holis'};
-  texto = stado[0];
-  setName = estado [1];
- // const {name, setName} = useState{''}; esta funcion me devuelve un arrai;
-const [name, setName] = useState('');
-  const handleChangeName = (ev) => {
-    setName(ev.target.value);
-  };
+  //const [name, setName] = useState('');
+  const [data, setData] = useState({ name: '', slogan: '', repo: '', demo: '' });
+  const handleInputName = (ev) => {
+    //name=ev.target.vaulue;
+    //setName(ev.targe.value);
+    setData({ name: ev.taget.value });
 
-  const handleCancel = (ev) => {
-    ev.preventDefault();
-    setName('');
-  };*/
+    //sestData({ name:ev.taget.value, slogan: ....})
+  };
 
   const handleClickCreateCard = (event) => {};
 
@@ -35,7 +33,7 @@ const [name, setName] = useState('');
               <p className='subtitle'>Personal Project Card</p>
               <hr className='line' />
 
-              <h2 className='title'>Elegant Workspace</h2>
+              <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus?
@@ -56,7 +54,7 @@ const [name, setName] = useState('');
         </section>
 
         <section className='form'>
-          <h2 className='title'>Información</h2>
+          <h2 className='form__title'>Información</h2>
 
           <section className='ask-info'>
             <p className='subtitle'>Cuéntanos sobre el proyecto</p>
@@ -70,6 +68,8 @@ const [name, setName] = useState('');
               placeholder='Nombre del proyecto'
               name='name'
               id='name'
+              value={data.name}
+              onInput={handleInputName}
             />
             <div className='slogan-repo'>
               <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />

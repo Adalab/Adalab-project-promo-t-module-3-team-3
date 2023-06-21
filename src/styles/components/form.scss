@@ -1,25 +1,23 @@
-.main .form {
+.form {
   background-color: #302c42;
   font-family: $montserrat;
-  width: 394px;
-  height: 773px;
+  width: 298.1px;
+  height: 680px;
   flex-grow: 0;
   margin: 21px 0 17px 9px;
   padding: 35.4px 22px 21.1px 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, $dusk, $Dark-form 89%);
-}
-.main .title {
-  color: $white;
-  width: 262px;
-  height: 37.4px;
-  flex-grow: 0;
-  margin: 0 43px 26.8px 35px;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: left;
-  color: $white;
+
+  &__title {
+    color: $white;
+    margin: 0 43px 26.8px 35px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    color: $white;
+  }
 }
 
 .main .ask-info {

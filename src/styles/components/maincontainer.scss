@@ -2,9 +2,6 @@
   background-color: #302c42;
   height: 100vh;
   padding: 20px;
-}
-.main {
   display: flex;
-  padding-top: 50px;
-  height: 80vh;
+  flex-direction: column;
 }
