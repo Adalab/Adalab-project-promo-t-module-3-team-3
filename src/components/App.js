@@ -1,29 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
+import callToApi from '../services/api';
+// import GetAvatar from './GetAvatar';
+// import Profile from './Profile';
 
 /*
 -usar una vvariable objeto para tos los input
 -variable vacia*/
 function App() {
-  //const [name, setName] = useState('');
-  const [data, setData] = useState({
-    name: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-  });
-  const handleInputName = (ev) => {
-    //name=ev.target.vaulue;
-    //setName(ev.targe.value);
-    setData({ name: ev.taget.value });
+  const [data, setData] = useState([]);
+  const [url, setUrl] =useState('')
 
-    //sestData({ name:ev.taget.value, slogan: ....})
+    //const [avatar, setAvatar] = useState('');
+
+
+
+
+  const handleInputForm = (ev) => {
+    const newProperty = ev.target.id;
+    const newValue = ev.target.value;
+    data[newProperty] = newValue;
+    data.photo =
+      'https://www.ivertech.com/Articles/Images/KoalaBear200x200.jpg';
+    data.image =
+      'https://upload.wikimedia.org/wikipedia/commons/c/c7/Tabby_cat_with_blue_eyes-3336579.jpg'
+
+    setData({ ...data });
   };
+    useEffect(() => {
+      callToApi(data).then((response) => {
+        setUrl(response);
+        console.log(response);
+      });
+    }, []);
 
-  const handleClickCreateCard = (event) => {};
+  // const handleImgProject = (avatar) => {
+  //   setAvatar(avatar);
+  // }
 
   return (
     <div className='container'>
@@ -43,27 +59,32 @@ function App() {
       </header>
       <main className='main'>
         <section className='preview'>
-          <img className='image' src={imgHero} alt='' />
-
+          <img className='image' src={imgHero} alt='' />;
           <section className='autor'>
             <section className='info-project'>
               <p className='subtitleCard'>Personal Project Card</p>
               <hr className='line' />
 
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
-              <p className='slogan'>Diseños Exclusivos</p>
+              <p className='slogan'>{data.slogan || 'Diseños Exclusivos'}</p>
               <p className='desc'>
-                Product Description Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Amet faucibus commodo tellus lectus lobortis.
+                {data.desc ||
+                  'Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
               </p>
               <section className='technologies'>
-                <p className='textTec'>React JS, MongoDB</p>
+                <p className='textTec'>
+                  {data.technologies || 'React JS, MongoDB'}
+                </p>
                 <div className='icons'>
                   <span className='glope'>
-                    <i className='fa-regular fa-globe'></i>
+                    <a href='https://'>
+                      <i className='fa-regular fa-globe'></i>
+                    </a>
                   </span>
                   <span className='github'>
-                    <i className='fa-brands fa-github'></i>
+                    <a href='https://github.com/'>
+                      <i className='fa-brands fa-github'></i>
+                    </a>
                   </span>
                 </div>
               </section>
@@ -71,8 +92,8 @@ function App() {
 
             <section className='info-autor'>
               <img className='imageCard' src={imgUser} alt='' />
-              <p className='job'>Full Stack Developer</p>
-              <p className='name'>Emmelie Björklund</p>
+              <p className='job'>{data.job || 'Full Stack Developer'}</p>
+              <p className='name'>{data.autor || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>
@@ -93,7 +114,7 @@ function App() {
               name='name'
               id='name'
               value={data.name}
-              onInput={handleInputName}
+              onInput={handleInputForm}
             />
 
             <input
@@ -102,36 +123,44 @@ function App() {
               name='slogan'
               id='slogan'
               placeholder='Slogan'
+              value={data.slogan}
+              onInput={handleInputForm}
             />
             <div className='slogan-repo'>
               <input
                 className='input'
                 type='text'
-                name='slogan'
-                id='slogan'
-                placeholder='Slogan'
+                name='repo'
+                id='repo'
+                placeholder='Repositorio'
+                value={data.repo}
+                onInput={handleInputForm}
               />
               <input
                 className='input'
                 type='text'
-                name='repo'
-                id='repo'
-                placeholder='Repo'
+                name='demo'
+                id='demo'
+                placeholder='Demo'
+                value={data.demo}
+                onInput={handleInputForm}
               />
             </div>
-            <input
+            {/* <input
               className='input'
               type='text'
               placeholder='Demo'
               name='demo'
               id='demo'
-            />
+            /> */}
             <input
               className='input'
               type='text'
               placeholder='Tecnologías'
               name='technologies'
               id='technologies'
+              value={data.technologies}
+              onInput={handleInputForm}
             />
             <textarea
               className='textarea'
@@ -139,6 +168,8 @@ function App() {
               placeholder='Descripción'
               name='desc'
               id='desc'
+              value={data.desc}
+              onChange={handleInputForm}
             ></textarea>
           </fieldset>
 
@@ -154,6 +185,8 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
+              value={data.autor}
+              onInput={handleInputForm}
             />
             <input
               className='input'
@@ -161,6 +194,8 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
+              value={data.job}
+              onInput={handleInputForm}
             />
           </fieldset>
 
@@ -171,7 +206,7 @@ function App() {
           <section className='buttons'>
             <button
               className='buttons__btn buttons__large'
-              onClick={handleClickCreateCard}
+              onClick={callToApi}
             >
               Crear Proyecto
             </button>
