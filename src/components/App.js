@@ -28,7 +28,18 @@ function App() {
   return (
     <div className='container'>
       <header className='header'>
-        <p className='text'>Proyectos Molones</p>
+        <div className='header__container'>
+          <i className='fa-sharp fa-solid fa-laptop-code'></i>
+          <p className='header__text'>Proyectos Molones</p>
+          <img className='header__logo' src={imgLogo} alt='' />
+        </div>
+        <div className='header__container2'>
+          <h1 className='header__title'>Proyectos Molones</h1>
+          <p className='header__text2'>
+            Escaparate en línea para recoger ideas a través de la tecnología.
+          </p>
+          <button className='header__button'>VER PROYECTO</button>
+        </div>
       </header>
       <main className='main'>
         <section className='preview'>
@@ -85,7 +96,13 @@ function App() {
               onInput={handleInputName}
             />
 
-            <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
+            <input
+              className='input'
+              type='text'
+              name='slogan'
+              id='slogan'
+              placeholder='Slogan'
+            />
             <div className='slogan-repo'>
               <input
                 className='input'
@@ -152,7 +169,10 @@ function App() {
             <button className='buttons__btn'>Subir foto de autora</button>
           </section>
           <section className='buttons'>
-            <button className='buttons__btn buttons__large' onClick={handleClickCreateCard}>
+            <button
+              className='buttons__btn buttons__large'
+              onClick={handleClickCreateCard}
+            >
               Crear Proyecto
             </button>
           </section>
