@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
+import imgLogo from '../images/logo-adalab.png';
 
 /*
 -usar una vvariable objeto para tos los input
@@ -74,16 +75,10 @@ function App() {
 
             <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
             <div className='slogan-repo'>
-              <input
-                className='input'
-                type='text'
-                name='repo'
-                id='repo'
-                placeholder='Repositorio'
-              />
-
-              <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
+              <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
+              <input className='input' type='text' name='repo' id='repo' placeholder='Repo' />
             </div>
+            <input className='input' type='text' placeholder='Demo' name='demo' id='demo' />
             <input
               className='input'
               type='text'
@@ -127,6 +122,9 @@ function App() {
           </section>
         </section>
       </main>
+      <footer className='footer'>
+        <img className='footer__logo' src={imgLogo} alt='Logo Adalab' />
+      </footer>
     </div>
   );
 }
