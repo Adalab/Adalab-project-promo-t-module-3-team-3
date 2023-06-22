@@ -1,47 +1,30 @@
 .main .preview {
-  //width: 60%;
-  padding: 20px;
+  margin: 17px 17px;
+  padding: 0.5px 1.2px 2.9px 0;
+  display: flex;
+  flex-direction: column;
 }
-
-.main .preview {
-  padding: 20px;
-}
-
 .main .preview .image {
+  width: 329.4px;
+  height: 307px;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 80%;
+
 }
-// .main {
-//   &__preview {
-//     width: 80%;
-//     margin: 10px 10px;
-//     display: flex;
-//     flex-direction: column;
-//     padding-top: 200px;
 
-//     &--image {
-//       object-fit: contain;
-//       background-size: cover;
-//       background-position: center;
-//       background-repeat: no-repeat;
-//       width: 90vw;
-//       height: 30vh;
+@media screen and (min-width: 768px) {
+  .main .preview {
+    flex-grow: 0;
+    padding-top: 21px;
+    margin: 0 48px 0 77px;
+    height: 600px;
+  }
+}
 
-//     }
-//   }
-// }
-// @media screen and (min-width: 768px) {
-//   .main {
-//     &__preview {
-//       margin-left: 60px;
-//       &--image {
-//         width: 70vw;
-//         height: 100%;
-//       }
-//     }
-//   }
-// }
 
 .main .preview .autor {
   background-color: $white;
