@@ -4,19 +4,14 @@ import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
 import callToApi from '../services/api';
-// import GetAvatar from './GetAvatar';
-// import Profile from './Profile';
+import GetAvatar from './GetAvatar';
+import Profile from './Profile';
 
-/*
--usar una vvariable objeto para tos los input
--variable vacia*/
+
 function App() {
+
   const [data, setData] = useState([]);
-  const [url, setUrl] =useState('')
-
-    //const [avatar, setAvatar] = useState('');
-
-
+  const [url, setUrl] = useState('');
 
 
   const handleInputForm = (ev) => {
@@ -26,20 +21,22 @@ function App() {
     data.photo =
       'https://www.ivertech.com/Articles/Images/KoalaBear200x200.jpg';
     data.image =
-      'https://upload.wikimedia.org/wikipedia/commons/c/c7/Tabby_cat_with_blue_eyes-3336579.jpg'
+      'https://upload.wikimedia.org/wikipedia/commons/c/c7/Tabby_cat_with_blue_eyes-3336579.jpg';
 
     setData({ ...data });
   };
-    useEffect(() => {
-      callToApi(data).then((response) => {
-        setUrl(response);
-        console.log(response);
-      });
-    }, []);
 
-  // const handleImgProject = (avatar) => {
-  //   setAvatar(avatar);
-  // }
+  const handleSubmit = () => {
+    console.log('handleSubmit');
+    callToApi(data).then((response) => {
+      if (response.success) {
+        setUrl(response.cardURL);
+      } else {
+        setUrl('No se pudo crear tu card');
+      }
+    });
+  };
+
 
   return (
     <div className='container'>
@@ -206,13 +203,13 @@ function App() {
           <section className='buttons'>
             <button
               className='buttons__btn buttons__large'
-              onClick={callToApi}
+              onClick={handleSubmit}
             >
               Crear Proyecto
             </button>
           </section>
           <section className='card'>
-            <span className=''> La tarjeta ha sido creada: </span>
+            <span className=''> La tarjeta ha sido creada: {url} </span>
             <a href='./#' className='' target='_blank' rel='noreferrer'>
               {' '}
             </a>
@@ -226,4 +223,4 @@ function App() {
   );
 }
 export default App;
-// recogendo
+

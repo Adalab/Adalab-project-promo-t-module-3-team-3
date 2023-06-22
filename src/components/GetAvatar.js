@@ -60,19 +60,19 @@ function GetAvatar(props) {
 
   const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
   return (
-    <div className='get-avatar'>
-      <label className='get-avatar__label'>
+    <div className="get-avatar">
+      <label className="get-avatar__label">
         Get avatar!
         <input
-          type='file'
+          type="file"
           ref={myFileField}
-          className='get-avatar__upload-field'
+          className="get-avatar__upload-field"
           onChange={uploadImage}
         />
       </label>
 
       <div
-        className='get-avatar__preview'
+        className="get-avatar__preview"
         style={{ backgroundImage: `url(${avatar})` }}
       ></div>
     </div>
