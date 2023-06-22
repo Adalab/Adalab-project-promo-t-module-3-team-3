@@ -34,7 +34,7 @@ function App() {
           <img className='header__logo' src={imgLogo} alt='' />
         </div>
         <div className='header__container2'>
-          <h1 className='header__title'>Proyectos molones</h1>
+          <h1 className='header__title'>Proyectos Molones</h1>
           <p className='header__text2'>
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
