@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/main.scss';
 import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
+import imgLogo from '../images/logo-adalab.png';
 
 /*
 -usar una vvariable objeto para tos los input
@@ -68,9 +69,9 @@ function App() {
         <section className='form'>
           <h2 className='form__title'>Información</h2>
 
-          <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre el proyecto</p>
-            <hr className='line' />
+          <section className='form__info'>
+            <p className='form__subtitle'>Cuéntanos sobre el proyecto</p>
+            <hr className='form__line' />
           </section>
 
           <fieldset className='project'>
@@ -83,6 +84,8 @@ function App() {
               value={data.name}
               onInput={handleInputName}
             />
+
+            <input className='input' type='text' name='slogan' id='slogan' placeholder='Slogan' />
             <div className='slogan-repo'>
               <input
                 className='input'
@@ -122,9 +125,9 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre la autora</p>
-            <hr className='line' />
+          <section>
+            <p className='form__subtitle'>Cuéntanos sobre la autora</p>
+            <hr className='form__line form__lineNone' />
           </section>
 
           <fieldset className='autor'>
@@ -144,12 +147,12 @@ function App() {
             />
           </fieldset>
 
-          <section className='buttons-img'>
-            <button className='btn'>Subir foto del proyecto</button>
-            <button className='btn'>Subir foto de autora</button>
+          <section className='buttons'>
+            <button className='buttons__btn'>Subir foto del proyecto</button>
+            <button className='buttons__btn'>Subir foto de autora</button>
           </section>
-          <section className='buttons-img'>
-            <button className='btn-large' onClick={handleClickCreateCard}>
+          <section className='buttons'>
+            <button className='buttons__btn buttons__large' onClick={handleClickCreateCard}>
               Crear Proyecto
             </button>
           </section>
@@ -161,6 +164,9 @@ function App() {
           </section>
         </section>
       </main>
+      <footer className='footer'>
+        <img className='footer__logo' src={imgLogo} alt='Logo Adalab' />
+      </footer>
     </div>
   );
 }
