@@ -4,8 +4,8 @@ import imgHero from '../images/cover.jpeg';
 import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
 import callToApi from '../services/api';
-import GetAvatar from './GetAvatar';
-import Profile from './Profile';
+//import GetAvatar from './GetAvatar';
+//import Profile from './Profile';
 
 
 function App() {
