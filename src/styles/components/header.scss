@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  display: inline-block;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
@@ -10,15 +10,15 @@
       padding-bottom: 30px;
       padding-left: 10px;
       font-family: $poppins;
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 300;
       line-height: normal;      
-      color: $white;  
+      color: $white-50;  
       display: inline-block;
   }
 
     &__title {
-      font-family: Montserrat;
+      font-family: $montserrat;
       font-size: 24px;
       font-weight: bold;
       line-height: normal; 
@@ -51,8 +51,9 @@
     }
 
     &__logo{
-      height: 50px;
-      height: 50px;
+      height: 46px;
+      width: 123px;
+  
     }
 
     &__container2 {
@@ -66,6 +67,6 @@
 }
 
 .fa-sharp {
-  font-size: 35px;
+  font-size: 25px;
   color: $white;
 }
