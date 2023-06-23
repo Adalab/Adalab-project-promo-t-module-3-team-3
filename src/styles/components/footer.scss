@@ -1,8 +1,8 @@
 .footer {
-  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 19px;
   &__logo {
     width: 123px;
     height: 46px;
@@ -11,7 +11,5 @@
       height: 43px;
     }
   }
-  @media (min-width: 768px) {
-    margin-top: 27px;
-  }
+
 }

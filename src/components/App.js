@@ -1,36 +1,61 @@
 import { useState } from 'react';
 import '../styles/main.scss';
-import imgHero from '../images/cover.jpeg';
-import imgUser from '../images/user.jpeg';
+//import imgHero from '../images/cover.jpeg';
+//import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
+import callToApi from '../services/api';
+//import GetAvatar from './GetAvatar';
+//import Profile from './Profile';
 
-/*
--usar una vvariable objeto para tos los input
--variable vacia*/
 function App() {
-  //const [name, setName] = useState('');
   const [data, setData] = useState({
     name: '',
     slogan: '',
-    repo: '',
+    technologies: '',
     demo: '',
+    repo: '',
+    desc: '',
+    autor: '',
+    job: '',
+    image:
+      'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+    photo:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/paquita-salas-1561634165.jpg?crop=1.00xw:0.890xh;0,0.0434xh&resize=500:*',
   });
-  const handleInputName = (ev) => {
-    //name=ev.target.vaulue;
-    //setName(ev.targe.value);
-    setData({ name: ev.taget.value });
+  const [url, setUrl] = useState('');
+  //const [error, setError] = useState('');
 
-    //sestData({ name:ev.taget.value, slogan: ....})
+  const handleInputForm = (ev) => {
+    setData({ ...data, [ev.target.id]: ev.target.value });
   };
 
-  const handleClickCreateCard = (event) => {};
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    console.log('handleSubmit');
+    // for (const prop in data) {
+    //   if(prop === ''){
+    //     setError(`Rellena el campo: ${prop}` )
+
+    //   }
+    // }
+
+    callToApi(data).then((response) => {
+      if (response.success) {
+        setUrl(response.cardURL);
+      } else {
+        setUrl('No se pudo crear tu card');
+      }
+    });
+  };
 
   return (
     <div className='container'>
       <header className='header'>
         <div className='header__container'>
-          <i className='fa-sharp fa-solid fa-laptop-code'></i>
-          <p className='header__text'>Proyectos Molones</p>
+          <div className='header__icon'>
+            <i className='fa-sharp fa-solid fa-laptop-code'></i>
+            <p className='header__text'>Proyectos Molones</p>
+          </div>
           <img className='header__logo' src={imgLogo} alt='' />
         </div>
         <div className='header__container2'>
@@ -38,13 +63,12 @@ function App() {
           <p className='header__text2'>
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
-          <button className='header__button'>VER PROYECTO</button>
+          <button className='header__button'>VER PROYECTOS</button>
         </div>
       </header>
       <main className='main'>
         <section className='preview'>
-          <img className='image' src={imgHero} alt='' />
-
+          <img className='image' src={data.image} alt='' />;
           <section className='autor'>
             <section className='info-project'>
               <div className='containerLine'>
@@ -53,29 +77,34 @@ function App() {
                 <hr className='line2' />
               </div>
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
-              <p className='slogan'>Diseños Exclusivos</p>
+              <p className='slogan'>{data.slogan || 'Diseños Exclusivos'}</p>
               <p className='desc'>
-                Product Description <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                faucibus commodo tellus lectus lobortis.
+                {data.desc ||
+                  'Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
               </p>
               <section className='technologies'>
-                <p className='textTec'>React JS, MongoDB</p>
+                <p className='textTec'>
+                  {data.technologies || 'React JS, MongoDB'}
+                </p>
                 <div className='icons'>
                   <span className='globe'>
-                    <i className='fa-solid fa-globe'></i>
+                    <a href={data.demo}>
+                      <i className='fa-regular fa-globe'></i>
+                    </a>
                   </span>
                   <span className='github'>
-                    <i className='fa-brands fa-github'></i>
+                    <a href={`https://github.com/${data.repo}`}>
+                      <i className='fa-brands fa-github'></i>
+                    </a>
                   </span>
                 </div>
               </section>
             </section>
 
             <section className='info-autor'>
-              <img className='imageCard' src={imgUser} alt='' />
-              <p className='job'>Full Stack Developer</p>
-              <p className='name'>Emmelie Björklund</p>
+              <img className='imageCard' src={data.photo} alt='' />
+              <p className='job'>{data.job || 'Full Stack Developer'}</p>
+              <p className='name'>{data.autor || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>
@@ -96,7 +125,7 @@ function App() {
               name='name'
               id='name'
               value={data.name}
-              onInput={handleInputName}
+              onInput={handleInputForm}
             />
 
             <input
@@ -105,36 +134,44 @@ function App() {
               name='slogan'
               id='slogan'
               placeholder='Slogan'
+              value={data.slogan}
+              onInput={handleInputForm}
             />
             <div className='slogan-repo'>
               <input
                 className='input'
                 type='text'
-                name='slogan'
-                id='slogan'
-                placeholder='Slogan'
+                name='repo'
+                id='repo'
+                placeholder='Repositorio'
+                value={data.repo}
+                onInput={handleInputForm}
               />
               <input
                 className='input'
                 type='text'
-                name='repo'
-                id='repo'
-                placeholder='Repo'
+                name='demo'
+                id='demo'
+                placeholder='Demo'
+                value={data.demo}
+                onInput={handleInputForm}
               />
             </div>
-            <input
+            {/* <input
               className='input'
               type='text'
               placeholder='Demo'
               name='demo'
               id='demo'
-            />
+            /> */}
             <input
               className='input'
               type='text'
               placeholder='Tecnologías'
               name='technologies'
               id='technologies'
+              value={data.technologies}
+              onInput={handleInputForm}
             />
             <textarea
               className='textarea'
@@ -142,6 +179,8 @@ function App() {
               placeholder='Descripción'
               name='desc'
               id='desc'
+              value={data.desc}
+              onChange={handleInputForm}
             ></textarea>
           </fieldset>
 
@@ -157,6 +196,8 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
+              value={data.autor}
+              onInput={handleInputForm}
             />
             <input
               className='input'
@@ -164,6 +205,8 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
+              value={data.job}
+              onInput={handleInputForm}
             />
           </fieldset>
 
@@ -174,13 +217,13 @@ function App() {
           <section className='buttons'>
             <button
               className='buttons__btn buttons__large'
-              onClick={handleClickCreateCard}
+              onClick={handleSubmit}
             >
               Crear Proyecto
             </button>
           </section>
           <section className='card'>
-            <span className=''> La tarjeta ha sido creada: </span>
+            <span className=''> La tarjeta ha sido creada: {url} </span>
             <a href='./#' className='' target='_blank' rel='noreferrer'>
               {' '}
             </a>
@@ -194,4 +237,3 @@ function App() {
   );
 }
 export default App;
-// recogendo
