@@ -47,9 +47,11 @@ function App() {
 
           <section className='autor'>
             <section className='info-project'>
-              <p className='subtitleCard'>Personal Project Card</p>
-              <hr className='line' />
-
+              <div className='containerLine'>
+                <hr className='line' />
+                <p className='subtitleCard'>Personal Project Card</p>
+                <hr className='line2' />
+              </div>
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
@@ -60,8 +62,8 @@ function App() {
               <section className='technologies'>
                 <p className='textTec'>React JS, MongoDB</p>
                 <div className='icons'>
-                  <span className='glope'>
-                    <i className='fa-regular fa-globe'></i>
+                  <span className='globe'>
+                    <i className='fa-solid fa-globe'></i>
                   </span>
                   <span className='github'>
                     <i className='fa-brands fa-github'></i>
