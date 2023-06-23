@@ -60,8 +60,10 @@ function App() {
     <div className='container'>
       <header className='header'>
         <div className='header__container'>
-          <i className='fa-sharp fa-solid fa-laptop-code'></i>
-          <p className='header__text'>Proyectos Molones</p>
+          <div className='header__icon'>
+            <i className='fa-sharp fa-solid fa-laptop-code'></i>
+            <p className='header__text'>Proyectos Molones</p>
+          </div>
           <img className='header__logo' src={imgLogo} alt='' />
         </div>
         <div className='header__container2'>
@@ -69,7 +71,7 @@ function App() {
           <p className='header__text2'>
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
-          <button className='header__button'>VER PROYECTO</button>
+          <button className='header__button'>VER PROYECTOS</button>
         </div>
       </header>
       <main className='main'>
