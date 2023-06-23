@@ -1,138 +1,3 @@
-/*.main .preview {
-  margin: 17px 17px;
-  padding: 0.5px 1.2px 2.9px 0;
-  display: flex;
-  flex-direction: column;
-}
-.main .preview .image {
-  width: 329.4px;
-  height: 307px;
-  object-fit: cover;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 80%;
-
-}
-
-@media screen and (min-width: 768px) {
-  .main .preview {
-    flex-grow: 0;
-    padding-top: 21px;
-    margin: 0 48px 0 77px;
-    height: 600px;
-  }
-}
-
-
-.main .preview .autor {
-  background-color: $white;
-  color: $greyish-brown;
-  transform: translateY(-50px);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 15px 5px 25px 5px;
-  overflow-y: scroll;
-
-}
-
-.info-project {
-  width: 60%;
-}
-
-.main .subtitleCard {
-  font-weight: 300;
-}
-
-.info-project .subtitleCard {
-  text-align: center;
-  font-family: $poppins;
-}
-
-.subtitleCard {
-  color: $dark;
-  line-height: 1.17;
-  font-size: 8px;
-}
-.info-project .line {
-  border: 0;
-  height: 1px;
-  background-image: $line-card-gradient;
-}
-
-.info-project .title {
-  color: $black;
-}
-
-.title {
-  font-size: 14px;
-  font-weight: bold;
-  font-family: $catamaran;
-  padding-bottom: 2px;
-}
-
-.info-project .slogan {
-  margin-bottom: 10px;
-}
-
-.slogan {
-  color: $greyish-brown-two;
-  font-family: $poppins;
-  font-weight: 500;
-  font-size: 10.3px;
-}
-
-.info-project .desc {
-  font-size: 8px;
-  font-family: $poppins;
-  line-height: 1.5;
-  color: $greyish-brown-88;
-}
-
-.technologies {
-  display: flex;
-  background-color: $white;
-  font-size: 11px;
-  padding-top: 18px;
-  font-family: $catamaran;
-}
-
-.globe {
-  border: solid 1px $icon-border-card;
-  border-radius: 20px;
-}
-
-.github {
-  border: solid 1px $icon-border-card;
-  border-radius: 20px;
-}
-
-.info-autor {
-  width: 40%;
-  text-align: center;
-}
-
-.imageCard {
-  border-radius: 50%;
-  height: 80px;
-  padding-top: 10px;
-}
-.info-autor .job {
-  color: $warm-grey;
-  font-size: 8.8px;
-  font-family: $catamaran;
-  padding-bottom: 5px;
-}
-
-.info-autor .name {
-  font-size: 11.6px;
-  font-family: $catamaran;
-  font-weight: bold;
-  color: $black-80;
-}
-*/
 .main .preview {
   margin: 17px 17px;
   padding: 0.5px 1.2px 2.9px 0;
@@ -167,7 +32,7 @@
   display: flex;
   flex-direction: row-reverse;
   padding: 15px 5px 25px 5px;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   @media screen and (min-width: 768px) {
     transform: translateY(-90px);
   }
@@ -176,7 +41,7 @@
   width: 90%;
   margin: auto;
   @media screen and (min-width: 768px) {
-    height: 250px;
+    height: 220px;
   }
 }
 .info-project {
@@ -196,11 +61,16 @@
   color: $dark;
   line-height: 1.17;
   font-size: 8px;
+  padding-top: 5px;
+  @media screen and (min-width: 768px) {
+    font-size: 10px;
+  }
 }
 .line {
   border: 0;
   height: 1px;
   background-image: $line-card-gradient;
+  transform: translateY(-13px);
 }
 
 .title {
@@ -210,7 +80,10 @@
   padding-bottom: 3px;
   color: $black;
   @media screen and (min-width: 768px) {
-    font-size: 20px;
+    font-size: 24px;
+    text-align: left;
+    line-height: 1.7;
+    padding-bottom: 0;
   }
 }
 
@@ -222,6 +95,8 @@
   padding-bottom: 10px;
   @media screen and (min-width: 768px) {
     font-size: 16px;
+    transform: translateY(-48px);
+    padding-bottom: 0;
   }
 }
 
@@ -231,29 +106,29 @@
   line-height: 1.5;
   color: $greyish-brown-88;
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 10px;
+    transform: translateY(-24px);
   }
 }
 
 .technologies {
   display: flex;
-  font-size: 11px;
+  font-size: 10px;
   padding-top: 18px;
   font-family: $catamaran;
   @media screen and (min-width: 768px) {
+    padding-top: 0;
   }
 }
 .textTec {
   color: $greyish-brown;
-}
-@media screen and (min-width: 768px) {
-  .textTec {
+  @media screen and (min-width: 768px) {
     text-align: center;
     background-color: $textTec-bgd;
-    width: 120px;
-    padding: 8px 24px 6px;
+    width: 100px;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 12px;
+    padding: 8px 14px 8px 14px;
   }
 }
 .globe {
@@ -269,23 +144,42 @@
 .info-autor {
   width: 40%;
   text-align: center;
+  padding-top: 10px;
+  @media screen and (min-width: 768px) {
+    text-align: none;
+  }
 }
 
 .imageCard {
   border-radius: 50%;
   height: 80px;
-  padding-top: 10px;
+  padding: 8px;
+  background-image: $bgd-image;
+  @media screen and (min-width: 768px) {
+    height: 100px;
+    object-fit: contain;
+  }
 }
-.info-autor .job {
+//.info-autor
+.job {
   color: $warm-grey;
   font-size: 8.8px;
   font-family: $catamaran;
   padding-bottom: 5px;
+  @media screen and (min-width: 768px) {
+    font-size: 11px;
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
-.info-autor .name {
+//.info-autor
+.name {
   font-size: 11.6px;
   font-family: $catamaran;
   font-weight: bold;
   color: $black-80;
+  @media screen and (min-width: 768px) {
+    font-size: 13.3px;
+  }
 }

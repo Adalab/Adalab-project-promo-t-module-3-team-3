@@ -53,8 +53,9 @@ function App() {
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>Diseños Exclusivos</p>
               <p className='desc'>
-                Product Description Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Amet faucibus commodo tellus lectus lobortis.
+                Product Description <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
+                faucibus commodo tellus lectus lobortis.
               </p>
               <section className='technologies'>
                 <p className='textTec'>React JS, MongoDB</p>
