@@ -3,7 +3,14 @@
   padding: 0.5px 1.2px 2.9px 0;
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-grow: 0;
+    padding-top: 21px;
+    margin: 0 40px 0 70px;
+    height: 600px;
+  }
 }
+
 .main .preview .image {
   width: 329.4px;
   height: 307px;
@@ -15,15 +22,6 @@
   height: 80%;
 }
 
-@media screen and (min-width: 768px) {
-  .main .preview {
-    flex-grow: 0;
-    padding-top: 21px;
-    margin: 0 48px 0 77px;
-    height: 600px;
-  }
-}
-
 .main .preview .autor {
   background-color: $white;
   color: $greyish-brown;
@@ -32,9 +30,8 @@
   display: flex;
   flex-direction: row-reverse;
   padding: 15px 5px 25px 5px;
-  //overflow-y: scroll;
   @media screen and (min-width: 768px) {
-    transform: translateY(-90px);
+    transform: translateY(-60px);
   }
 }
 .autor {
@@ -44,6 +41,7 @@
     height: 220px;
   }
 }
+
 .info-project {
   width: 60%;
 }
@@ -68,12 +66,11 @@
 }
 .containerLine {
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   justify-content: flex-start;
   align-items: baseline;
 }
 .line {
-  //border: 0;
   width: 25px;
   margin: 0;
   height: 1px;
@@ -125,6 +122,7 @@
 
 .technologies {
   display: flex;
+  justify-content: space-between;
   font-size: 10px;
   padding-top: 18px;
   font-family: $catamaran;
@@ -140,19 +138,28 @@
     width: 100px;
     border-radius: 12px;
     font-size: 12px;
-    padding: 8px 14px 8px 14px;
+    padding: 8px 11px 8px 11px;
   }
 }
+.icons {
+  padding-right: 12px;
+}
 .globe {
-  border: solid 1px $icon-border-card;
-  border-radius: 20%;
+  margin-right: 5.3px;
+  padding: 0 3px 0 3px;
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 2px $icon-border-card;
+  background-color: $white-50;
 }
 
 .github {
-  border: solid 1px $icon-border-card;
-  border-radius: 20%;
+  padding: 0 3px 0 3px;
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 2px $icon-border-card;
+  background-color: $white-50;
 }
-
 .info-autor {
   width: 40%;
   text-align: center;
@@ -165,25 +172,26 @@
 .imageCard {
   border-radius: 50%;
   height: 80px;
-  //padding: 8px;
-  //background-image: $warm-grey;
+  width: 80px;
+  padding-bottom: 3px;
   @media screen and (min-width: 768px) {
     height: 100px;
-    object-fit: contain;
+    width: 100px;
+    border-radius: 500px;
+    margin-bottom: 10px;
   }
 }
-//.info-autor
+
 .job {
   color: $warm-grey;
   font-size: 8.8px;
   font-family: $catamaran;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   @media screen and (min-width: 768px) {
     font-size: 11px;
   }
 }
 
-//.info-autor
 .name {
   font-size: 11.6px;
   font-family: $catamaran;

@@ -89,7 +89,7 @@ function App() {
                 <div className='icons'>
                   <span className='globe'>
                     <a href={data.demo}>
-                      <i className='fa-regular fa-globe'></i>
+                      <i className='fa-solid fa-globe'></i>
                     </a>
                   </span>
                   <span className='github'>
