@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import '../styles/main.scss';
 //import imgHero from '../images/cover.jpeg';
 //import imgUser from '../images/user.jpeg';
