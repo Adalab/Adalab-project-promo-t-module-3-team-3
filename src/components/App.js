@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../styles/main.scss';
-import imgHero from '../images/cover.jpeg';
-import imgUser from '../images/user.jpeg';
+//import imgHero from '../images/cover.jpeg';
+//import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
 import callToApi from '../services/api';
 //import GetAvatar from './GetAvatar';
@@ -10,24 +10,42 @@ import callToApi from '../services/api';
 
 function App() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    technologies: '',
+    demo: '',
+    repo: '',
+    desc: '',
+    autor: '',
+    job: '',
+    image:
+      'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+    photo:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/paquita-salas-1561634165.jpg?crop=1.00xw:0.890xh;0,0.0434xh&resize=500:*',
+  });
   const [url, setUrl] = useState('');
+  //const [error, setError] = useState('');
 
 
   const handleInputForm = (ev) => {
-    const newProperty = ev.target.id;
-    const newValue = ev.target.value;
-    data[newProperty] = newValue;
-    data.photo =
-      'https://www.ivertech.com/Articles/Images/KoalaBear200x200.jpg';
-    data.image =
-      'https://upload.wikimedia.org/wikipedia/commons/c/c7/Tabby_cat_with_blue_eyes-3336579.jpg';
-
-    setData({ ...data });
+    setData({ ...data, 
+      [ev.target.id]: ev.target.value
+    });
+    
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (ev) => {
+    
+    ev.preventDefault()
     console.log('handleSubmit');
+    // for (const prop in data) {
+    //   if(prop === ''){
+    //     setError(`Rellena el campo: ${prop}` )
+        
+    //   }
+    // }
+
     callToApi(data).then((response) => {
       if (response.success) {
         setUrl(response.cardURL);
@@ -56,7 +74,7 @@ function App() {
       </header>
       <main className='main'>
         <section className='preview'>
-          <img className='image' src={imgHero} alt='' />;
+          <img className='image' src={data.image} alt='' />;
           <section className='autor'>
             <section className='info-project'>
               <p className='subtitleCard'>Personal Project Card</p>
@@ -73,13 +91,13 @@ function App() {
                   {data.technologies || 'React JS, MongoDB'}
                 </p>
                 <div className='icons'>
-                  <span className='glope'>
-                    <a href='https://'>
+                  <span className='globe'>
+                    <a href={data.demo}>
                       <i className='fa-regular fa-globe'></i>
                     </a>
                   </span>
                   <span className='github'>
-                    <a href='https://github.com/'>
+                    <a href={`https://github.com/${data.repo}`}>
                       <i className='fa-brands fa-github'></i>
                     </a>
                   </span>
@@ -88,7 +106,7 @@ function App() {
             </section>
 
             <section className='info-autor'>
-              <img className='imageCard' src={imgUser} alt='' />
+              <img className='imageCard' src={data.photo} alt='' />
               <p className='job'>{data.job || 'Full Stack Developer'}</p>
               <p className='name'>{data.autor || 'Emmelie Björklund'}</p>
             </section>
