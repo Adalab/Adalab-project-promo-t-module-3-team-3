@@ -37,9 +37,6 @@
 .autor {
   width: 90%;
   margin: auto;
-  @media screen and (min-width: 768px) {
-    height: 220px;
-  }
 }
 
 .info-project {
@@ -143,6 +140,10 @@
 }
 .icons {
   padding-right: 12px;
+  @media screen and (min-width: 768px) {
+    padding-right: 10px;
+    transform: translateY(-20px);
+  }
 }
 .globe {
   margin-right: 5.3px;
@@ -151,6 +152,10 @@
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 2px $icon-border-card;
   background-color: $white-50;
+  @media screen and (min-width: 768px) {
+    margin-right: 4px;
+    width: 20px;
+  }
 }
 
 .github {
