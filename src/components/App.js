@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import '../styles/main.scss';
 //import imgHero from '../images/cover.jpeg';
 //import imgUser from '../images/user.jpeg';
@@ -7,9 +7,7 @@ import callToApi from '../services/api';
 //import GetAvatar from './GetAvatar';
 //import Profile from './Profile';
 
-
 function App() {
-
   const [data, setData] = useState({
     name: '',
     slogan: '',
@@ -27,22 +25,17 @@ function App() {
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
 
-
   const handleInputForm = (ev) => {
-    setData({ ...data, 
-      [ev.target.id]: ev.target.value
-    });
-    
+    setData({ ...data, [ev.target.id]: ev.target.value });
   };
 
   const handleSubmit = (ev) => {
-    
-    ev.preventDefault()
+    ev.preventDefault();
     console.log('handleSubmit');
     // for (const prop in data) {
     //   if(prop === ''){
     //     setError(`Rellena el campo: ${prop}` )
-        
+
     //   }
     // }
 
@@ -54,7 +47,6 @@ function App() {
       }
     });
   };
-
 
   return (
     <div className='container'>
@@ -79,9 +71,11 @@ function App() {
           <img className='image' src={data.image} alt='' />;
           <section className='autor'>
             <section className='info-project'>
-              <p className='subtitleCard'>Personal Project Card</p>
-              <hr className='line' />
-
+              <div className='containerLine'>
+                <hr className='line' />
+                <p className='subtitleCard'>Personal Project Card</p>
+                <hr className='line2' />
+              </div>
               <h2 className='title'>{data.name || 'Elegant wordspace'}</h2>
               <p className='slogan'>{data.slogan || 'Diseños Exclusivos'}</p>
               <p className='desc'>
@@ -95,7 +89,7 @@ function App() {
                 <div className='icons'>
                   <span className='globe'>
                     <a href={data.demo}>
-                      <i className='fa-regular fa-globe'></i>
+                      <i className='fa-solid fa-globe'></i>
                     </a>
                   </span>
                   <span className='github'>
@@ -243,4 +237,3 @@ function App() {
   );
 }
 export default App;
-
