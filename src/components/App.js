@@ -18,9 +18,9 @@ function App() {
     autor: '',
     job: '',
     image:
-      'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+    'https://pbs.twimg.com/profile_images/1144500087189454848/Reu3d-xY_400x400.png',
     photo:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/paquita-salas-1561634165.jpg?crop=1.00xw:0.890xh;0,0.0434xh&resize=500:*',
+    'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
   });
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
@@ -68,7 +68,7 @@ function App() {
       </header>
       <main className='main'>
         <section className='preview'>
-          <img className='image' src={data.image} alt='' />;
+          <img className='image' src={data.photo} alt='' />;
           <section className='autor'>
             <section className='info-project'>
               <div className='containerLine'>
@@ -88,12 +88,12 @@ function App() {
                 </p>
                 <div className='icons'>
                   <span className='globe'>
-                    <a href={data.demo}>
+                    <a href={data.repo}>
                       <i className='fa-solid fa-globe'></i>
                     </a>
                   </span>
                   <span className='github'>
-                    <a href={`https://github.com/${data.repo}`}>
+                    <a href={`https://github.com/${data.demo}`}>
                       <i className='fa-brands fa-github'></i>
                     </a>
                   </span>
@@ -102,7 +102,7 @@ function App() {
             </section>
 
             <section className='info-autor'>
-              <img className='imageCard' src={data.photo} alt='' />
+              <img className='imageCard' src={data.image} alt='' />
               <p className='job'>{data.job || 'Full Stack Developer'}</p>
               <p className='name'>{data.autor || 'Emmelie Björklund'}</p>
             </section>
