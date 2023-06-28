@@ -54,12 +54,12 @@ function App() {
 
   return (
     <div className='container'>
-     <Header/>
+     <Header imgLogo={imgLogo}/>
       <main className='main'>
-        <Preview/>
-        <Form/>
+        <Preview data={data}/>
+        <Form data={data} handleInputForm={handleInputForm} handleSubmit={handleSubmit} url={url}/>
       </main>
-     <Footer/>
+     <Footer imgLogo={imgLogo}/>
     </div>
   );
 }
