@@ -86,10 +86,9 @@
   padding-bottom: 3px;
   color: $black;
   @media screen and (min-width: 768px) {
-    font-size: 24px;
-    text-align: left;
-    line-height: 1.7;
-    padding-bottom: 0;
+    font-size: 22px;
+    //text-align: left;
+    //line-height: 1.7;
   }
 }
 
@@ -100,9 +99,7 @@
   font-size: 10.3px;
   padding-bottom: 10px;
   @media screen and (min-width: 768px) {
-    font-size: 16px;
-    transform: translateY(-48px);
-    padding-bottom: 0;
+    font-size: 14px;
   }
 }
 
@@ -113,7 +110,6 @@
   color: $greyish-brown-88;
   @media screen and (min-width: 768px) {
     font-size: 10px;
-    transform: translateY(-24px);
   }
 }
 
@@ -123,9 +119,6 @@
   font-size: 10px;
   padding-top: 18px;
   font-family: $catamaran;
-  @media screen and (min-width: 768px) {
-    padding-top: 0;
-  }
 }
 .textTec {
   color: $greyish-brown;
@@ -135,14 +128,14 @@
     width: 100px;
     border-radius: 12px;
     font-size: 12px;
-    padding: 8px 11px 8px 11px;
+    padding: 6px 10px 6px 10px;
   }
 }
 .icons {
   padding-right: 12px;
   @media screen and (min-width: 768px) {
     padding-right: 10px;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 }
 .globe {
