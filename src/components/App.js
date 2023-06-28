@@ -22,15 +22,15 @@ function App() {
     autor: '',
     job: '',
     image:
-    'https://pbs.twimg.com/profile_images/1144500087189454848/Reu3d-xY_400x400.png',
+      'https://pbs.twimg.com/profile_images/1144500087189454848/Reu3d-xY_400x400.png',
     photo:
-    'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
   });
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
 
-  const handleInputForm = (ev) => {
-    setData({ ...data, [ev.target.id]: ev.target.value });
+  const handleChangeForm = (input, value) => {
+    setData({ ...data, [input]: value });
   };
 
   const handleSubmit = (ev) => {
@@ -54,12 +54,17 @@ function App() {
 
   return (
     <div className='container'>
-     <Header imgLogo={imgLogo}/>
+      <Header imgLogo={imgLogo} />
       <main className='main'>
-        <Preview data={data}/>
-        <Form data={data} handleInputForm={handleInputForm} handleSubmit={handleSubmit} url={url}/>
+        <Preview data={data} />
+        <Form
+          data={data}
+          handleChangeForm={handleChangeForm}
+          handleSubmit={handleSubmit}
+          url={url}
+        />
       </main>
-     <Footer imgLogo={imgLogo}/>
+      <Footer imgLogo={imgLogo} />
     </div>
   );
 }
