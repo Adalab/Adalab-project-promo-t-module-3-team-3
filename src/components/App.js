@@ -29,8 +29,9 @@ function App() {
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
 
-  const handleInputForm = (ev) => {
-    setData({ ...data, [ev.target.id]: ev.target.value });
+  const handleChangeForm = (input, value) => {
+    setData({ ...data, [input]: value });
+    
   };
 
   const handleSubmit = (ev) => {
@@ -57,7 +58,7 @@ function App() {
      <Header imgLogo={imgLogo}/>
       <main className='main'>
         <Preview data={data}/>
-        <Form data={data} handleInputForm={handleInputForm} handleSubmit={handleSubmit} url={url}/>
+        <Form data={data} handleChangeForm={handleChangeForm} handleSubmit={handleSubmit} url={url}/>
       </main>
      <Footer imgLogo={imgLogo}/>
     </div>

@@ -1,4 +1,8 @@
-function Form ({data, handleInputForm, handleSubmit, url}) {
+function Form ({data ,handleChangeForm, handleSubmit, url}) {
+  const handleInputForm = (ev) => {
+    // setData({ ...data, [ev.target.id]: ev.target.value });
+    handleChangeForm(ev.target.id, ev.target.value)
+  };
     return(
         <section className='form'>
         <h2 className='form__title'>Información</h2>
@@ -114,9 +118,9 @@ function Form ({data, handleInputForm, handleSubmit, url}) {
           </button>
         </section>
         <section className='card'>
-          <span className=''> La tarjeta ha sido creada: {url} </span>
-          <a href='./#' className='' target='_blank' rel='noreferrer'>
-            {' '}
+          <span className=''> La tarjeta ha sido creada: </span>
+          <a href= {url} className='' target='_blank' rel='noreferrer'>
+            {url}
           </a>
         </section>
       </section>
