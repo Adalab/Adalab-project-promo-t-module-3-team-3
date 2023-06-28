@@ -120,9 +120,9 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
         </button>
       </section>
       <section className='card'>
-        <span className=''> La tarjeta ha sido creada: {url} </span>
-        <a href='./#' className='' target='_blank' rel='noreferrer'>
-          {' '}
+        <span className=''> La tarjeta ha sido creada: {} </span>
+        <a href='url' className='' target='_blank' rel='noreferrer'>
+          {url}
         </a>
       </section>
     </section>
