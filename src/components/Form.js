@@ -1,8 +1,13 @@
-function Form({ data, handleChangeForm, handleSubmit, url }) {
-  const handleInputForm = (ev) => {
-    // setData({ ...data, [ev.target.id]: ev.target.value });
-    handleChangeForm(ev.target.id, ev.target.value);
+import GetAvatar from './GetAvatar';
+
+function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
+  const handleImage = (fichero) => {
+    handleChangeForm('image', fichero);
   };
+  const handlePhoto = (fichero) => {
+    handleChangeForm('photo', fichero);
+  };
+
   return (
     <section className='form'>
       <h2 className='form__title'>Información</h2>
@@ -106,8 +111,8 @@ function Form({ data, handleChangeForm, handleSubmit, url }) {
       </fieldset>
 
       <section className='buttons'>
-        <button className='buttons__btn'>Subir foto del proyecto</button>
-        <button className='buttons__btn'>Subir foto de autora</button>
+        <GetAvatar text='Subir foto del proyecto' avatar={data.image} updateAvatar={handleImage} />
+        <GetAvatar text='Subir foto de autora' avatar={data.photo} updateAvatar={handlePhoto} />
       </section>
       <section className='buttons'>
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
@@ -115,9 +120,9 @@ function Form({ data, handleChangeForm, handleSubmit, url }) {
         </button>
       </section>
       <section className='card'>
-        <span className=''> La tarjeta ha sido creada: </span>
-        <a href={url} className='' target='_blank' rel='noreferrer'>
-          {url}
+        <span className=''> La tarjeta ha sido creada: {url} </span>
+        <a href='./#' className='' target='_blank' rel='noreferrer'>
+          {' '}
         </a>
       </section>
     </section>
