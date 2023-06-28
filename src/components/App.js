@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/main.scss';
-//import imgHero from '../images/cover.jpeg';
+//mport imgHero from '../images/cover.jpeg';
 //import imgUser from '../images/user.jpeg';
 import imgLogo from '../images/logo-adalab.png';
 import callToApi from '../services/api';
@@ -8,7 +8,7 @@ import Header from './Header';
 import Preview from './Preview';
 import Form from './Form';
 import Footer from './Footer';
-//import GetAvatar from './GetAvatar';
+
 //import Profile from './Profile';
 
 function App() {
@@ -21,13 +21,16 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    image:
-    'https://pbs.twimg.com/profile_images/1144500087189454848/Reu3d-xY_400x400.png',
-    photo:
-    'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+    image: '',
+    photo: '',
   });
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
+
+  const handleChangeForm = (propName, value) => {
+    const cloneData = { ...data, [propName]: value };
+    setData(cloneData);
+  };
 
   const handleInputForm = (ev) => {
     setData({ ...data, [ev.target.id]: ev.target.value });
@@ -54,12 +57,18 @@ function App() {
 
   return (
     <div className='container'>
-     <Header imgLogo={imgLogo}/>
+      <Header imgLogo={imgLogo} />
       <main className='main'>
-        <Preview data={data}/>
-        <Form data={data} handleInputForm={handleInputForm} handleSubmit={handleSubmit} url={url}/>
+        <Preview data={data} />
+        <Form
+          data={data}
+          handleInputForm={handleInputForm}
+          handleSubmit={handleSubmit}
+          handleChangeForm={handleChangeForm}
+          url={url}
+        />
       </main>
-     <Footer imgLogo={imgLogo}/>
+      <Footer imgLogo={imgLogo} />
     </div>
   );
 }
