@@ -28,6 +28,7 @@ function App() {
 
   const handleChangeForm = (propName, value) => {
     const cloneData = { ...data, [propName]: value };
+
     setData(cloneData);
   };
 
@@ -44,10 +45,12 @@ function App() {
 
     //   }
     // }
+    console.log(data);
 
     callToApi(data).then((response) => {
       if (response.success) {
         setUrl(response.cardURL);
+        console.log(response.cardURL);
       } else {
         setUrl('No se pudo crear tu card');
       }

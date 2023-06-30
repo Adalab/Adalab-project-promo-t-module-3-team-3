@@ -4,7 +4,7 @@ import imgUser from '../images/user.jpeg';
 function Preview({ data }) {
   return (
     <section className='preview'>
-      <img className='image' src={data.image || projectImage} alt='' />;
+      <img className='image' src={data.photo || projectImage} alt='' />;
       <section className='autor'>
         <section className='info-project'>
           <div className='containerLine'>
@@ -35,7 +35,7 @@ function Preview({ data }) {
           </section>
         </section>
         <section className='info-autor'>
-          <img className='imageCard' src={data.photo || imgUser} alt='' />
+          <img className='imageCard' src={data.image || imgUser} alt='' />
           <p className='job'>{data.job || 'Full Stack Developer'}</p>
           <p className='name'>{data.autor || 'Emmelie Björklund'}</p>
         </section>
