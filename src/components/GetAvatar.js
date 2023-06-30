@@ -6,7 +6,6 @@ import '../stylesheets/GetAvatar.scss';
 function GetAvatar({ avatar = defaultAvatar, updateAvatar, text = 'Get avatar!' }) {
   const fr = new FileReader();
   const myFileField = React.createRef();
-
   const uploadImage = (ev) => {
     if (ev.currentTarget.files.length > 0) {
       const myFile = ev.currentTarget.files[0];

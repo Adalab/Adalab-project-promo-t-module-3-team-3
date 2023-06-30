@@ -111,8 +111,8 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
       </fieldset>
 
       <section className='buttons'>
-        <GetAvatar text='Subir foto del proyecto' avatar={data.photo} updateAvatar={handlePhoto} />
-        <GetAvatar text='Subir foto de autora' avatar={data.image} updateAvatar={handleImage} />
+        <GetAvatar text='Subir foto del proyecto' avatar={data.image} updateAvatar={handleImage} />
+        <GetAvatar text='Subir foto de autora' avatar={data.photo} updateAvatar={handlePhoto} />
       </section>
       <section className='buttons'>
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
@@ -121,7 +121,7 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
       </section>
       <section className='card'>
         <span className=''> La tarjeta ha sido creada: {} </span>
-        <a href={url} className='' target='_blank' rel='noreferrer'>
+        <a href='url' className='' target='_blank' rel='noreferrer'>
           {url}
         </a>
       </section>
