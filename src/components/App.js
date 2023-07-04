@@ -10,18 +10,20 @@ import logo_nasa from '../images/logo_nasa.jpg';
 import lStorage from '../services/localstorage';
 
 function App() {
-  const [data, setData] = useState({
-    name: '',
-    slogan: '',
-    technologies: '',
-    demo: '',
-    repo: '',
-    desc: '',
-    autor: '',
-    job: '',
-    image: '',
-    photo: '',
-  });
+  const [data, setData] = useState(lStorage.get('lsData', {
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image:'',
+      photo:'',
+    }
+  ))
+
   const [url, setUrl] = useState('');
 
   const handleChangeForm = (input, value) => {
@@ -59,7 +61,8 @@ function App() {
       image: '',
       photo: '',
     });
-  };
+    setUrl('')
+   };
   return (
     <div className='container'>
       <Header imgLogo={imgLogo} imgNasa={logo_nasa} />
