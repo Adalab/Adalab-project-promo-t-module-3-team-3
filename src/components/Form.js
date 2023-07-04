@@ -128,7 +128,7 @@ function Form({
           Crear Proyecto
         </button>
         <button className='buttons__btn buttons__large' onClick={handleReset}>
-          Reset
+          Borrar todo
         </button>
       </section>
       <section className='card'>
