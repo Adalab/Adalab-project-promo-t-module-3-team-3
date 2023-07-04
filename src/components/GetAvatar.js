@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import defaultAvatar from '../images/defaultAvatar.png';
 import '../stylesheets/GetAvatar.scss';
 
-function GetAvatar({ avatar = defaultAvatar, updateAvatar, text = 'Get avatar!' }) {
+function GetAvatar({
+  avatar = defaultAvatar,
+  updateAvatar,
+  text = 'Get avatar!',
+}) {
   const fr = new FileReader();
   const myFileField = React.createRef();
 

@@ -3,7 +3,7 @@ function Header({ imgLogo, imgNasa }) {
     <header className='header'>
       <div className='header__container'>
         <div className='header__icon'>
-          <img className='header__logo--nasa'  src={imgNasa} alt='nasa' />
+          <img className='header__logo--nasa' src={imgNasa} alt='nasa' />
           <p className='header__text'>Top secret NASA</p>
         </div>
         <img className='header__logo' src={imgLogo} alt='' />

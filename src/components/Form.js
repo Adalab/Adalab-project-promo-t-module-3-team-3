@@ -127,10 +127,9 @@ function Form({
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
           Crear Proyecto
         </button>
-        <button
-          className='buttons__btn buttons__large'
-          onClick={handleReset}
-        >Reset</button>  
+        <button className='buttons__btn buttons__large' onClick={handleReset}>
+          Reset
+        </button>
       </section>
       <section className='card'>
         <span className={url === '' ? 'hidden' : ''}>

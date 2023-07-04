@@ -6,9 +6,9 @@ import '../stylesheets/Profile.css';
 function Profile(props) {
   const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
   return (
-    <div className="profile">
+    <div className='profile'>
       <div
-        className="profile__avatar"
+        className='profile__avatar'
         style={{ backgroundImage: `url(${avatar})` }}
       ></div>
     </div>
