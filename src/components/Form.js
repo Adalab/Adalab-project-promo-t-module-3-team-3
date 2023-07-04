@@ -64,13 +64,6 @@ function Form({
             onInput={handleInputForm}
           />
         </div>
-        {/* <input
-            className='input'
-            type='text'
-            placeholder='Demo'
-            name='demo'
-            id='demo'
-          /> */}
         <input
           className='input'
           type='text'
@@ -134,12 +127,10 @@ function Form({
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
           Crear Proyecto
         </button>
-        <input
+        <button
           className='buttons__btn buttons__large'
-          type='button'
-          value='reset'
           onClick={handleReset}
-        />
+        >Reset</button>  
       </section>
       <section className='card'>
         <span className={url === '' ? 'hidden' : ''}>

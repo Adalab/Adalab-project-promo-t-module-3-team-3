@@ -15,7 +15,7 @@ import lStorage from '../services/localstorage';
 
 function App() {
   const [data, setData] = useState(
-    lStorage.get('lsData') || {
+    {
       name: '',
       slogan: '',
       technologies: '',
@@ -29,27 +29,22 @@ function App() {
     }
   );
   const [url, setUrl] = useState('');
-  //const [error, setError] = useState('');
 
   const handleChangeForm = (input, value) => {
-    setData({ ...data, [input]: value });
+    setData({ ...data, [input] : value });
   };
+  const handleInputForm =(ev) =>{
+    setData({...data, [ev.target.id]:ev.target.value})
+  }
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-
-    // for (const prop in data) {
-    //   if(prop === ''){
-    //     setError(`Rellena el campo: ${prop}` )
-
-    //   }
-    // }
 
     callToApi(data).then((response) => {
       if (response.success) {
         setUrl(response.cardURL);
       } else {
-        setUrl('No se pudo crear tu card');
+        setUrl('No se pudo crear su card, por favor rellene todos los campos');
       }
     });
   };
@@ -79,6 +74,7 @@ function App() {
         <Form
           data={data}
           handleChangeForm={handleChangeForm}
+          handleInputForm={handleInputForm}
           handleReset={handleInputReset}
           handleSubmit={handleSubmit}
           url={url}
