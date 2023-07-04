@@ -25,7 +25,7 @@ function App() {
   });
   const [url, setUrl] = useState('');
   //const [error, setError] = useState('');
-
+  console.log('url', url)
   const handleChangeForm = (propName, value) => {
     const cloneData = { ...data, [propName]: value };
 
@@ -50,9 +50,19 @@ function App() {
     callToApi(data).then((response) => {
       if (response.success) {
         setUrl(response.cardURL);
+        setData({name: '',
+              slogan: '',
+              technologies: '',
+              demo: '',
+              repo: '',
+              desc: '',
+              autor: '',
+              job: '',
+              image: '',
+              photo: ''})
         console.log(response.cardURL);
       } else {
-        setUrl('No se pudo crear tu card');
+        setUrl('No se pudo crear su card, por favor rellene todos los campos');
       }
     });
   };

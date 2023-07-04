@@ -108,11 +108,20 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
           value={data.job}
           onInput={handleInputForm}
         />
+        <span></span>
       </fieldset>
 
       <section className='buttons'>
-        <GetAvatar text='Subir foto del proyecto' avatar={data.photo} updateAvatar={handlePhoto} />
-        <GetAvatar text='Subir foto de autora' avatar={data.image} updateAvatar={handleImage} />
+        <GetAvatar
+          text='Subir foto del proyecto'
+          avatar={data.photo}
+          updateAvatar={handlePhoto}
+        />
+        <GetAvatar
+          text='Subir foto de autora'
+          avatar={data.image}
+          updateAvatar={handleImage}
+        />
       </section>
       <section className='buttons'>
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
@@ -120,8 +129,10 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
         </button>
       </section>
       <section className='card'>
-        <span className=''> La tarjeta ha sido creada: {} </span>
-        <a href={url} className='' target='_blank' rel='noreferrer'>
+        <span className={url === '' ? 'hidden' : ''}>
+          {url !== 'No se pudo crear su card, por favor rellene todos los campos' ? 'La tarjeta ha sido creada' :'No se pudo crear tu card, por favor rellene todos los campos'}
+        </span>
+        <a href={url} className= {url === 'No se pudo crear su card, por favor rellene todos los campos' ? 'hidden' : ''} target='_blank' rel='noreferrer'>
           {url}
         </a>
       </section>
