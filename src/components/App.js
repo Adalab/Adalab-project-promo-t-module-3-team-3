@@ -24,10 +24,8 @@ function App() {
       desc: '',
       autor: '',
       job: '',
-      image:
-        'https://pbs.twimg.com/profile_images/1144500087189454848/Reu3d-xY_400x400.png',
-      photo:
-        'https://mir-s3-cdn-cf.behance.net/projects/404/40df36161966393.Y3JvcCwxNzM0LDEzNTcsMTMzLDA.jpg',
+      image: '',
+      photo: '',
     }
   );
   const [url, setUrl] = useState('');
@@ -39,7 +37,7 @@ function App() {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    console.log('handleSubmit');
+
     // for (const prop in data) {
     //   if(prop === ''){
     //     setError(`Rellena el campo: ${prop}` )
