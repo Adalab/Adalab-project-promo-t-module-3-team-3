@@ -1,21 +1,22 @@
-function Header ({imgLogo}) {
-    return (
-        <header className='header'>
-        <div className='header__container'>
-          <div className='header__icon'>
-            <i className='fa-sharp fa-solid fa-laptop-code'></i>
-            <p className='header__text'>Proyectos Molones</p>
-          </div>
-          <img className='header__logo' src={imgLogo} alt='' />
+function Header({ imgLogo, imgNasa }) {
+  return (
+    <header className='header'>
+      <div className='header__container'>
+        <div className='header__icon'>
+          <img className='header__logo--nasa'  src={imgNasa} alt='nasa' />
+          <p className='header__text'>Top secret NASA</p>
         </div>
-        <div className='header__container2'>
-          <h1 className='header__title'>Proyectos Molones</h1>
-          <p className='header__text2'>
-            Escaparate en línea para recoger ideas a través de la tecnología.
-          </p>
-          <button className='header__button'>VER PROYECTOS</button>
-        </div>
-      </header>
-    )
+        <img className='header__logo' src={imgLogo} alt='' />
+      </div>
+      <div className='header__container2'>
+        <h1 className='header__title'>🧑‍🚀CosmoCoders🚀</h1>
+        <p className='header__text2'>
+          Red de reclutamiento para futuros programadores proyecto:
+          Destructuring.
+        </p>
+        <button className='header__button'>VER PROYECTOS</button>
+      </div>
+    </header>
+  );
 }
 export default Header;

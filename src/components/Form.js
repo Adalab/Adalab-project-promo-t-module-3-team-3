@@ -1,6 +1,13 @@
 import GetAvatar from './GetAvatar';
 
-function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
+function Form({
+  data,
+  handleInputForm,
+  handleSubmit,
+  url,
+  handleChangeForm,
+  handleReset,
+}) {
   const handleImage = (fichero) => {
     handleChangeForm('image', fichero);
   };
@@ -127,12 +134,31 @@ function Form({ data, handleInputForm, handleSubmit, url, handleChangeForm }) {
         <button className='buttons__btn buttons__large' onClick={handleSubmit}>
           Crear Proyecto
         </button>
+        <input
+          className='buttons__btn buttons__large'
+          type='button'
+          value='reset'
+          onClick={handleReset}
+        />
       </section>
       <section className='card'>
         <span className={url === '' ? 'hidden' : ''}>
-          {url !== 'No se pudo crear su card, por favor rellene todos los campos' ? 'La tarjeta ha sido creada' :'No se pudo crear tu card, por favor rellene todos los campos'}
+          {url !==
+          'No se pudo crear su card, por favor rellene todos los campos'
+            ? 'La tarjeta ha sido creada'
+            : 'No se pudo crear tu card, por favor rellene todos los campos'}
         </span>
-        <a href={url} className= {url === 'No se pudo crear su card, por favor rellene todos los campos' ? 'hidden' : ''} target='_blank' rel='noreferrer'>
+        <a
+          href={url}
+          className={
+            url ===
+            'No se pudo crear su card, por favor rellene todos los campos'
+              ? 'hidden'
+              : ''
+          }
+          target='_blank'
+          rel='noreferrer'
+        >
           {url}
         </a>
       </section>

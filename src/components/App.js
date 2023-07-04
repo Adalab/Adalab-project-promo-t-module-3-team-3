@@ -8,6 +8,7 @@ import Header from './Header';
 import Preview from './Preview';
 import Form from './Form';
 import Footer from './Footer';
+import logo_nasa from '../images/logo_nasa.jpg';
 //import Profile from './Profile';
 
 function App() {
@@ -38,28 +39,10 @@ function App() {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    console.log('handleSubmit');
-    // for (const prop in data) {
-    //   if(prop === ''){
-    //     setError(`Rellena el campo: ${prop}` )
-
-    //   }
-    // }
-    console.log(data);
 
     callToApi(data).then((response) => {
       if (response.success) {
         setUrl(response.cardURL);
-        setData({name: '',
-              slogan: '',
-              technologies: '',
-              demo: '',
-              repo: '',
-              desc: '',
-              autor: '',
-              job: '',
-              image: '',
-              photo: ''})
         console.log(response.cardURL);
       } else {
         setUrl('No se pudo crear su card, por favor rellene todos los campos');
@@ -67,9 +50,23 @@ function App() {
     });
   };
 
+
+  const handleInputReset =(ev)=>{
+ setData({ name: '',
+    slogan: '',
+    technologies: '',
+    demo: '',
+    repo: '',
+    desc: '',
+    autor: '',
+    job: '',
+    image: '',
+    photo: '',
+  })
+  }
   return (
     <div className='container'>
-      <Header imgLogo={imgLogo} />
+      <Header imgLogo={imgLogo} imgNasa={logo_nasa} />
       <main className='main'>
         <Preview data={data} />
         <Form
@@ -77,6 +74,7 @@ function App() {
           handleInputForm={handleInputForm}
           handleSubmit={handleSubmit}
           handleChangeForm={handleChangeForm}
+          handleReset={handleInputReset}
           url={url}
         />
       </main>
