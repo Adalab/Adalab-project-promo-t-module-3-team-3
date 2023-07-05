@@ -113,6 +113,7 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+
   &__btn {
     margin-top: 38px;
     color: $white;
@@ -125,10 +126,14 @@
     background-image: linear-gradient(to right, $dark-lilac -2%, #c0b7e8 98%);
     border-radius: 40px;
     padding: 0 18px;
+    transition: all 0.2s;
     @media screen and (min-width: 768px) {
       font-size: 12px;
       height: 42px;
     }
+  }
+  .buttons__btn:hover {
+    transform: scale(1.1);
   }
   &__large {
     margin-top: 10px;
@@ -145,6 +150,6 @@
 .hidden {
   display: none;
 }
-.card__url{
-  color:rgb(199, 103, 191);
+.card__url {
+  color: rgb(199, 103, 191);
 }
