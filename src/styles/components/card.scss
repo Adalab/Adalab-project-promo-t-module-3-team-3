@@ -83,13 +83,13 @@
   font-size: 14px;
   font-weight: bold;
   font-family: $catamaran;
-  padding-bottom: 3px;
+  // padding-bottom: 3px;
   color: $black;
   @media screen and (min-width: 768px) {
     font-size: 24px;
     text-align: left;
     line-height: 1.7;
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
 }
 
@@ -102,7 +102,7 @@
   @media screen and (min-width: 768px) {
     font-size: 16px;
     transform: translateY(-48px);
-    padding-bottom: 0;
+    margin-top: 20px;
   }
 }
 
@@ -113,7 +113,7 @@
   color: $greyish-brown-88;
   @media screen and (min-width: 768px) {
     font-size: 10px;
-    transform: translateY(-24px);
+    transform: translateY(-40px);
   }
 }
 
