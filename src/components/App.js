@@ -13,6 +13,7 @@ import logo_nasa from '../images/logo_nasa.jpg';
 //import GetAvatar from './GetAvatar';
 //import Profile from './Profile';
 import lStorage from '../services/localstorage';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [data, setData] = useState(
@@ -77,7 +78,7 @@ function App() {
       <Header imgLogo={imgLogo} imgNasa={logo_nasa} />
       <main className='main'>
         <Routes>
-          <Route />
+          <Route path='/' element={<></>} />
           <Route
             path='/createcard'
             element={
@@ -90,6 +91,9 @@ function App() {
                   handleSubmit={handleSubmit}
                   url={url}
                 />
+                <Link to='/' className='divReturn__text'>
+                  Volver
+                </Link>
               </>
             }
           />
