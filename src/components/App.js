@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import '../styles/main.scss';
 //import imgHero from '../images/cover.jpeg';
 //import imgUser from '../images/user.jpeg';
@@ -75,14 +76,24 @@ function App() {
     <div className='container'>
       <Header imgLogo={imgLogo} imgNasa={logo_nasa} />
       <main className='main'>
-        <Preview data={data} />
-        <Form
-          data={data}
-          handleChangeForm={handleChangeForm}
-          handleReset={handleInputReset}
-          handleSubmit={handleSubmit}
-          url={url}
-        />
+        <Routes>
+          <Route />
+          <Route
+            path='/createcard'
+            element={
+              <>
+                <Preview data={data} />
+                <Form
+                  data={data}
+                  handleChangeForm={handleChangeForm}
+                  handleReset={handleInputReset}
+                  handleSubmit={handleSubmit}
+                  url={url}
+                />
+              </>
+            }
+          />
+        </Routes>
       </main>
       <Footer imgLogo={imgLogo} />
     </div>
